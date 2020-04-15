@@ -86,58 +86,58 @@
 <td>Day 5</td>
 <td><a href="https://www.hackerrank.com/challenges/s10-poisson-distribution-1/problem" rel="nofollow">Poisson Distribution I
 </a></td>
-<td><a href="https://github.com/djeada/Leetcode-30-day-Challange/blob/master/src/Middle%20of%20the%20Linked%20List.py">Python</a></td>
+<td><a href="https://github.com/djeada/10DaysStatistics/blob/master/Day%205%20Poisson%20Distribution%20I.py">Python</a></td>
 </tr>
 <td>Day 5</td>
 <td><a href="https://www.hackerrank.com/challenges/s10-poisson-distribution-2/problem" rel="nofollow">Poisson Distribution II</a></td>
-<td><a href="https://github.com/djeada/Leetcode-30-day-Challange/blob/master/src/Group%20Anagrams.py">Python</a></td>
+<td><a href="https://github.com/djeada/10DaysStatistics/blob/master/Day%205%20Poisson%20Distribution%20II.py">Python</a></td>
 </tr>
 <tr>
 <td>Day 5</td>
 <td><a href="https://www.hackerrank.com/challenges/s10-normal-distribution-1/problem" rel="nofollow">Normal Distribution I</a></td>
-<td><a href="https://github.com/djeada/Leetcode-30-day-Challange/blob/master/src/Counting%20Elements.py">Python</a></td>
+<td><a href="https://github.com/djeada/10DaysStatistics/blob/master/Day%205%20Normal%20Distribution%20I.py">Python</a></td>
 </tr>
 <tr>
 <td>Day 5</td>
 <td><a href="https://www.hackerrank.com/challenges/s10-normal-distribution-2/problem" rel="nofollow">Normal Distribution II</a></td>
-<td><a href="https://github.com/djeada/Leetcode-30-day-Challange/blob/master/src/Middle%20of%20the%20Linked%20List.py">Python</a></td>
+<td><a href="https://github.com/djeada/10DaysStatistics/blob/master/Day%205%20Normal%20Distribution%20II.py">Python</a></td>
 </tr>
 <td>Day 6</td>
 <td><a href="https://www.hackerrank.com/challenges/s10-the-central-limit-theorem-1/problem" rel="nofollow">The Central Limit Theorem I</a></td>
-<td><a href="https://github.com/djeada/Leetcode-30-day-Challange/blob/master/src/Group%20Anagrams.py">Python</a></td>
+<td><a href="https://github.com/djeada/10DaysStatistics/blob/master/Day%206%20Central%20Limit%20Theorem%20I.py">Python</a></td>
 </tr>
 <tr>
 <td>Day 6</td>
 <td><a href="https://www.hackerrank.com/challenges/s10-the-central-limit-theorem-2/problem" rel="nofollow">The Central Limit Theorem II</a></td>
-<td><a href="https://github.com/djeada/Leetcode-30-day-Challange/blob/master/src/Counting%20Elements.py">Python</a></td>
+<td><a href="https://github.com/djeada/10DaysStatistics/blob/master/Day%206%20Central%20Limit%20Theorem%20II.py">Python</a></td>
 </tr>
 <tr>
 <td>Day 6</td>
 <td><a href="https://www.hackerrank.com/challenges/s10-the-central-limit-theorem-3/problem" rel="nofollow">The Central Limit Theorem III</a></td>
-<td><a href="https://github.com/djeada/Leetcode-30-day-Challange/blob/master/src/Middle%20of%20the%20Linked%20List.py">Python</a></td>
+<td><a href="https://github.com/djeada/10DaysStatistics/blob/master/Day%206%20Central%20Limit%20Theorem%20III.py">Python</a></td>
 </tr>
 <td>Day 7</td>
 <td><a href="https://www.hackerrank.com/challenges/s10-pearson-correlation-coefficient/problem" rel="nofollow">Pearson Correlation Coefficient I</a></td>
-<td><a href="https://github.com/djeada/Leetcode-30-day-Challange/blob/master/src/Middle%20of%20the%20Linked%20List.py">Python</a></td>
+<td><a href="https://github.com/djeada/10DaysStatistics/blob/master/Day%207%20Pearson%20Correlation%20Coefficient.py">Python</a></td>
 </tr>
 <td>Day 7</td>
 <td><a href="https://www.hackerrank.com/challenges/s10-spearman-rank-correlation-coefficient/problem" rel="nofollow">Spearman's Rank Correlation Coefficient</a></td>
-<td><a href="https://github.com/djeada/Leetcode-30-day-Challange/blob/master/src/Group%20Anagrams.py">Python</a></td>
+<td><a href="https://github.com/djeada/10DaysStatistics/blob/master/Day%207%20Spearman's%20Rank%20Correlation%20Coefficient.py">Python</a></td>
 </tr>
 <tr>
 <td>Day 8</td>
 <td><a href="https://www.hackerrank.com/challenges/s10-least-square-regression-line/problem" rel="nofollow">Least Square Regression Line</a></td>
-<td><a href="https://github.com/djeada/Leetcode-30-day-Challange/blob/master/src/Counting%20Elements.py">Python</a></td>
+<td><a href="https://github.com/djeada/10DaysStatistics/blob/master/Day%208%20Least%20Square%20Regression%20Line.py">Python</a></td>
 </tr>
 <tr>
 <td>Day 8</td>
 <td><a href="https://www.hackerrank.com/challenges/s10-mcq-7/problem" rel="nofollow">Pearson Correlation Coefficient II</a></td>
-<td><a href="https://github.com/djeada/Leetcode-30-day-Challange/blob/master/src/Middle%20of%20the%20Linked%20List.py">Python</a></td>
+<td><a href="https://github.com/djeada/10DaysStatistics/blob/master/Day%208%20Least%20Square%20Regression%20Line.py">Python</a></td>
 </tr>
 <tr>
 <td>Day 9</td>
 <td><a href="https://www.hackerrank.com/challenges/s10-multiple-linear-regression/problem" rel="nofollow">Multiple Linear Regression</a></td>
-<td><a href="https://github.com/djeada/Leetcode-30-day-Challange/blob/master/src/Middle%20of%20the%20Linked%20List.py">Python</a></td>
+<td><a href="">Python</a></td>
 </tr>
 </tbody>
 </table>
