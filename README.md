@@ -67,21 +67,21 @@
 </tr>
 <td>Day 4</td>
 <td><a href="https://www.hackerrank.com/challenges/s10-binomial-distribution-1/problem" rel="nofollow">Binomial Distribution I</a></td>
-<td><a href="https://github.com/djeada/Leetcode-30-day-Challange/blob/master/src/Middle%20of%20the%20Linked%20List.py">Python</a></td>
+<td><a href="https://github.com/djeada/10DaysStatistics/blob/master/Day%204%20Binomial%20Distribution%20I.py">Python</a></td>
 </tr>
 <td>Day 4</td>
 <td><a href="https://www.hackerrank.com/challenges/s10-binomial-distribution-2/problem" rel="nofollow">Binomial Distribution II</a></td>
-<td><a href="https://github.com/djeada/Leetcode-30-day-Challange/blob/master/src/Group%20Anagrams.py">Python</a></td>
+<td><a href="https://github.com/djeada/10DaysStatistics/blob/master/Day%204%20Binomial%20Distribution%20II.py">Python</a></td>
 </tr>
 <tr>
 <td>Day 4</td>
 <td><a href="https://www.hackerrank.com/challenges/s10-geometric-distribution-1/problem" rel="nofollow">Geometric Distribution I</a></td>
-<td><a href="https://github.com/djeada/Leetcode-30-day-Challange/blob/master/src/Counting%20Elements.py">Python</a></td>
+<td><a href="https://github.com/djeada/10DaysStatistics/blob/master/Day%204%20Geometric%20Distribution%20I.py">Python</a></td>
 </tr>
 <tr>
 <td>Day 4</td>
 <td><a href="https://www.hackerrank.com/challenges/s10-geometric-distribution-2/problem" rel="nofollow">Geometric Distribution II</a></td>
-<td><a href="https://github.com/djeada/Leetcode-30-day-Challange/blob/master/src/Middle%20of%20the%20Linked%20List.py">Python</a></td>
+<td><a href="https://github.com/djeada/10DaysStatistics/blob/master/Day%204%20Geometric%20Distribution%20II.py">Python</a></td>
 </tr>
 <td>Day 5</td>
 <td><a href="https://www.hackerrank.com/challenges/s10-poisson-distribution-1/problem" rel="nofollow">Poisson Distribution I
