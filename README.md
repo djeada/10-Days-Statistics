@@ -1,5 +1,5 @@
 # 10DaysStatistics
-10 days statistics challange from hackerrank
+10 days statistics challenge from hackerrank.
 
 <table>
 <thead>
