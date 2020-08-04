@@ -146,4 +146,4 @@
 All contributions are welcomed.
 
 <h1>License</h1>
-This project is licensed under  GNU GENERAL PUBLIC LICENSE - see the <a href='https://github.com/djeada/10DaysStatistics/blob/master/LICENSE.txtLICENSE.txt]'> LICENSE.txt </a> file for details.
+This project is licensed under  GNU GENERAL PUBLIC LICENSE - see the <a href='https://github.com/djeada/10DaysStatistics/blob/master/license.txt'> LICENSE.txt </a> file for details.
