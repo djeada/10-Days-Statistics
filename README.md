@@ -132,12 +132,12 @@
 <tr>
 <td>Day 8</td>
 <td><a href="https://www.hackerrank.com/challenges/s10-mcq-7/problem" rel="nofollow">Pearson Correlation Coefficient II</a></td>
-<td><a href="https://github.com/djeada/10DaysStatistics/blob/master/Day%208%20Least%20Square%20Regression%20Line.py">Python</a></td>
+<td><a >Python</a></td>
 </tr>
 <tr>
 <td>Day 9</td>
 <td><a href="https://www.hackerrank.com/challenges/s10-multiple-linear-regression/problem" rel="nofollow">Multiple Linear Regression</a></td>
-<td><a href="">Python</a></td>
+<td><a >Python</a></td>
 </tr>
 </tbody>
 </table>
