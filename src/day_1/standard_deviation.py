@@ -8,23 +8,35 @@ standard deviation.
 import math
 
 
-def getMean(data):
+def calculate_mean(data):
     n = len(data)
-    sum = 0
+    total = 0
+
     for x in data:
-        sum += x
-    return sum / n
+        total += x
+
+    return total / n
 
 
-def getStandardDev(data):
+def calculate_stdev(data):
     n = len(data)
-    sum = 0
-    mean = getMean(data)
+    total = 0
+    mean = calculate_mean(data)
+
     for x in data:
-        sum = sum + (x - mean) ** 2
-    return math.sqrt(sum / n)
+        total += (x - mean) ** 2
+
+    return math.sqrt(total / n)
 
 
-n = int(input())
-data = list(map(int, input().rstrip().split()))
-print(getStandardDev(data))
+def main():
+
+    n = int(input())
+    data = list(map(int, input().rstrip().split()))
+
+    stdev = calculate_stdev(data)
+    print(stdev)
+
+
+if __name__ == "__main__":
+    main()

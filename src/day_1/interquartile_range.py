@@ -5,31 +5,52 @@ F, representing the respective frequencies of X's elements, construct a data
 set, S, where each xi occurs at frequency fi. Then calculate and print S's interquartile
 range, rounded to a scale of 1 decimal place (i.e.,12.3 format).
 """
-# Enter your code here. Read input from STDIN. Print output to STDOUT
 
 
-def getMedian(data):
+def calculate_median(data):
     n = len(data)
+
     if n % 2 == 0:
         return (data[n // 2] + data[n // 2 - 1]) / 2
+
     return data[n // 2]
 
 
-n = int(input())
-X = list(map(int, input().rstrip().split()))
-F = list(map(int, input().rstrip().split()))
-S = []
+def calculate_lower_quartile(S, n):
+    return calculate_median(S[: n // 2])
 
-for i in range(n):
-    for j in range(F[i]):
-        S.append(X[i])
 
-S.sort()
-n = len(S)
-lowerQuartile = getMedian(S[: n // 2])
-if n % 2 == 1:
-    upperQuartile = getMedian(S[n // 2 + 1 :])
-else:
-    upperQuartile = getMedian(S[n // 2 :])
+def calculate_upper_quartile(S, n):
 
-print(float(upperQuartile - lowerQuartile))
+    if n % 2 == 1:
+        return calculate_median(S[n // 2 + 1 :])
+
+    return calculate_median(S[n // 2 :])
+
+
+def calculate_inter_quartile(S, n):
+    lower_quartile = calculate_lower_quartile(S, n)
+    upper_quartile = calculate_upper_quartile(S, n)
+
+    return float(upper_quartile - lower_quartile)
+
+
+def main():
+
+    n = int(input())
+    X = list(map(int, input().rstrip().split()))
+    F = list(map(int, input().rstrip().split()))
+    S = []
+
+    for i in range(n):
+        for j in range(F[i]):
+            S.append(X[i])
+
+    S.sort()
+    n = len(S)
+
+    print(calculate_inter_quartile(S, n))
+
+
+if __name__ == "__main__":
+    main()

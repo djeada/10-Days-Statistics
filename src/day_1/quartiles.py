@@ -5,25 +5,41 @@ It is guaranteed that Q1, Q2, and Q3 are integers.
 """
 
 
-def getMedian(data):
+def calculate_median(data):
     n = len(data)
+
     if n % 2 == 0:
-        return int((data[int(n / 2)] + data[int(n / 2) - 1]) / 2)
-    return data[int(n / 2)]
+        return (data[n // 2] + data[n // 2 - 1]) / 2
+
+    return data[n // 2]
 
 
-n = int(input())
-data = list(map(int, input().rstrip().split()))
-data.sort()
+def calculate_lower_quartile(S, n):
+    return calculate_median(S[: n // 2])
 
-median = getMedian(data)
-lowerQuartile = getMedian(data[: int(n / 2)])
 
-if n % 2 == 1:
-    upperQuartile = getMedian(data[int(n / 2) + 1 :])
-else:
-    upperQuartile = getMedian(data[int(n / 2) :])
+def calculate_upper_quartile(S, n):
 
-print(lowerQuartile)
-print(median)
-print(upperQuartile)
+    if n % 2 == 1:
+        return calculate_median(S[n // 2 + 1 :])
+
+    return calculate_median(S[n // 2 :])
+
+
+def main():
+
+    n = int(input())
+    data = list(map(int, input().rstrip().split()))
+    data.sort()
+
+    median = calculate_median(data)
+    lower_quartile = calculate_lower_quartile(data, n)
+    upper_quartile = calculate_upper_quartile(data, n)
+
+    print(int(lower_quartile))
+    print(int(median))
+    print(int(upper_quartile))
+
+
+if __name__ == "__main__":
+    main()

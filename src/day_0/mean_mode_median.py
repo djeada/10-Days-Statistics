@@ -7,35 +7,55 @@ Note: Other than the modal value (which will always be an integer), your
 answers should be in decimal form, rounded to a scale of 1 decimal place
 (i.e., 12.3, 7.0 format).
 """
-n = int(input())
-data = list(map(int, input().rstrip().split()))
-data.sort()
-
-suma = 0
-
-if n % 2 == 0:
-    median = (data[int(n / 2)] + data[int(n / 2) - 1]) / 2
-else:
-    median = data[int(n / 2)]
 
 
-def add(histo, key):
-    if key in histo:
-        histo[key] += 1
-    else:
-        histo[key] = 1
+def calculate_median(data, n):
+    if n % 2 == 0:
+        return (data[int(n / 2)] + data[int(n / 2) - 1]) / 2
+
+    return data[int(n / 2)]
 
 
-histo = dict()
-for x in data:
-    suma += x
-    add(histo, x)
+def calculate_mean(data, n):
+    total = 0
 
-mean = suma / n
-mode = max(histo, key=histo.get)
-if histo[mode] == 1:
-    mode = min(data)
+    for x in data:
+        total += x
 
-print(mean)
-print(median)
-print(mode)
+    return total / n
+
+
+def calculate_mode(data, n):
+
+    histo = dict()
+
+    for x in data:
+        if x in histo:
+            histo[x] += 1
+        else:
+            histo[x] = 1
+
+    mode = max(histo, key=histo.get)
+    if histo[mode] == 1:
+        mode = min(data)
+
+    return mode
+
+
+def main():
+
+    n = int(input())
+    data = list(map(int, input().rstrip().split()))
+    data.sort()
+
+    median = calculate_median(data, n)
+    mean = calculate_mean(data, n)
+    mode = calculate_mode(data, n)
+
+    print(mean)
+    print(median)
+    print(mode)
+
+
+if __name__ == "__main__":
+    main()
