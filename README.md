@@ -33,7 +33,7 @@
 </tr>
 <tr>
 <td>Day 1</td>
-<td><a href="https://www.hackerrank.com/challenges/s10-standard-deviation/problem" rel="nofollow">Standrad Deviation</a></td>
+<td><a href="https://www.hackerrank.com/challenges/s10-standard-deviation/problem" rel="nofollow">Standard Deviation</a></td>
 <td><a href="https://github.com/djeada/10DaysStatistics/blob/master/src/day_1/standard_deviation.py">Python</a></td>
 </tr>
 <tr>
