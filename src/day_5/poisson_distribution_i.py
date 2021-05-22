@@ -16,7 +16,14 @@ def poisson(l, k):
     return l ** k * e ** (-l) / factorial(k)
 
 
-l = float(input())
-k = int(input())
+def main():
 
-print("{:.3f}".format(poisson(l, k)))
+    l = float(input())
+    k = int(input())
+
+    result = poisson(l, k)
+    print("{:.3f}".format(result))
+
+
+if __name__ == "__main__":
+    main()

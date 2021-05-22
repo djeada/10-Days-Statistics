@@ -11,24 +11,28 @@ import math
 pi = 3.14
 
 
-def normalDistribution(x, miu, sigma):
+def normal_distribution(x, miu, sigma):
     return math.exp(-(x - miu) ** 2 / (2 * sigma ** 2)) / (sigma * math.sqrt(2 * pi))
 
 
-def cumulativeProbability(x, miu, sigma):
+def cumulative_probability(x, miu, sigma):
     return 1 / 2 * (1 + math.erf((x - miu) / (sigma * math.sqrt(2))))
 
 
-miu, sigma = map(int, input().split())
-x = float(input())
-lower, upper = map(int, input().split())
+def main():
 
+    miu, sigma = map(int, input().split())
+    x = float(input())
+    lower, upper = map(int, input().split())
 
-print("{:.3f}".format(cumulativeProbability(x, miu, sigma)))
+    result = cumulative_probability(x, miu, sigma)
+    print("{:.3f}".format(result))
 
-print(
-    "{:.3f}".format(
-        cumulativeProbability(upper, miu, sigma)
-        - cumulativeProbability(lower, miu, sigma)
+    result = cumulative_probability(upper, miu, sigma) - cumulative_probability(
+        lower, miu, sigma
     )
-)
+    print("{:.3f}".format(result))
+
+
+if __name__ == "__main__":
+    main()

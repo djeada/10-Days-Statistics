@@ -15,18 +15,29 @@ import math
 pi = 3.14
 
 
-def normalDistribution(x, miu, sigma):
+def normal_distribution(x, miu, sigma):
     return math.exp(-(x - miu) ** 2 / (2 * sigma ** 2)) / (sigma * math.sqrt(2 * pi))
 
 
-def cumulativeProbability(x, miu, sigma):
+def cumulative_probability(x, miu, sigma):
     return 1 / 2 * (1 + math.erf((x - miu) / (sigma * math.sqrt(2))))
 
 
-miu, sigma = map(int, input().split())
-x1 = float(input())
-x2 = float(input())
+def main():
 
-print("{:.2f}".format((100 - cumulativeProbability(x1, miu, sigma) * 100)))
-print("{:.2f}".format((100 - cumulativeProbability(x2, miu, sigma) * 100)))
-print("{:.2f}".format(cumulativeProbability(x2, miu, sigma) * 100))
+    miu, sigma = map(int, input().split())
+    x1 = float(input())
+    x2 = float(input())
+
+    result = 100 - cumulative_probability(x1, miu, sigma) * 100
+    print("{:.2f}".format(result))
+
+    result = 100 - cumulative_probability(x2, miu, sigma) * 100
+    print("{:.2f}".format(result))
+
+    result = cumulative_probability(x2, miu, sigma) * 100
+    print("{:.2f}".format(result))
+
+
+if __name__ == "__main__":
+    main()
