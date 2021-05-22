@@ -11,18 +11,22 @@ that all 100 students will be able to purchase tickets?
 import math
 
 
-def cumulativeProbability(x, miu, sigma):
+def cumulative_probability(x, miu, sigma):
     return 1 / 2 * (1 + math.erf((x - miu) / (sigma * math.sqrt(2))))
 
 
-tickets = float(input())
-students = int(input())
-miu = float(input())
-sigma = float(input())
+def main():
 
+    tickets = float(input())
+    students = int(input())
+    miu = float(input())
+    sigma = float(input())
 
-print(
-    "{:.4f}".format(
-        cumulativeProbability(tickets, students * miu, math.sqrt(students) * sigma)
+    result = cumulative_probability(
+        tickets, students * miu, math.sqrt(students) * sigma
     )
-)
+    print("{:.4f}".format(result))
+
+
+if __name__ == "__main__":
+    main()

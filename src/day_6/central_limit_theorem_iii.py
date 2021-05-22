@@ -7,12 +7,18 @@ P(A < x < B). Use the value of z = 1.96. Note that z is the z-score.
 
 import math
 
-n = int(input())
-miu = float(input())
-sigma = float(input())
-percent = float(input())
-z = float(input())
 
-e = z * sigma / math.sqrt(n)
-print("{:2f}".format(miu - e))
-print("{:2f}".format(miu + e))
+def main():
+    n = int(input())
+    miu = float(input())
+    sigma = float(input())
+    percent = float(input())
+    z = float(input())
+
+    e = z * sigma / math.sqrt(n)
+    print("{:2f}".format(miu - e))
+    print("{:2f}".format(miu + e))
+
+
+if __name__ == "__main__":
+    main()

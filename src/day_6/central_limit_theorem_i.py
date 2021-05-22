@@ -10,16 +10,20 @@ and transported?
 import math
 
 
-def cumulativeProbability(x, miu, sigma):
+def cumulative_probability(x, miu, sigma):
     return 1 / 2 * (1 + math.erf((x - miu) / (sigma * math.sqrt(2))))
 
 
-maximumLoad = float(input())
-n = int(input())
-miu = float(input())
-sigma = float(input())
+def main():
+
+    maximum_load = float(input())
+    n = int(input())
+    miu = float(input())
+    sigma = float(input())
+
+    result = cumulative_probability(maximum_load, n * miu, math.sqrt(n) * sigma)
+    print("{:.4f}".format(result))
 
 
-print(
-    "{:.4f}".format(cumulativeProbability(maximumLoad, n * miu, math.sqrt(n) * sigma))
-)
+if __name__ == "__main__":
+    main()
