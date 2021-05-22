@@ -12,6 +12,7 @@ Then print your result, rounded to a scale of  decimal places
 def factorial(n):
     if n < 2:
         return 1
+
     return n * factorial(n - 1)
 
 
@@ -21,15 +22,21 @@ def binomial(n, x, p):
     )
 
 
-boys, girls = map(float, input().split())
+def main():
 
-probability = boys / (boys + girls)
+    boys, girls = map(float, input().split())
 
-print(
-    "{:.3f}".format(
+    probability = boys / (boys + girls)
+
+    result = (
         binomial(6, 3, probability)
         + binomial(6, 4, probability)
         + binomial(6, 5, probability)
         + binomial(6, 6, probability)
     )
-)
+
+    print("{:.3f}".format(result))
+
+
+if __name__ == "__main__":
+    main()

@@ -8,13 +8,24 @@ def geometric(n, p):
     return p * (1 - p) ** (n - 1)
 
 
-omega, space = map(int, input().split())
-p = omega / space
+def sum_geometric(n, p):
+    total = 0
+    for i in range(1, n):
+        total += geometric(i, p)
 
-n = int(input())
+    return total
 
-sum = 0
-for i in range(1, 6):
-    sum += geometric(i, p)
 
-print("{:.3f}".format(sum))
+def main():
+
+    omega, space = map(int, input().split())
+    n = int(input())
+
+    p = omega / space
+
+    result = sum_geometric(6, p)
+    print("{:.3f}".format(result))
+
+
+if __name__ == "__main__":
+    main()

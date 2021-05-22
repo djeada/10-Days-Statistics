@@ -8,9 +8,16 @@ def geometric(n, p):
     return p * (1 - p) ** (n - 1)
 
 
-omega, space = map(int, input().split())
-p = omega / space
+def main():
 
-n = int(input())
+    omega, space = map(int, input().split())
+    n = int(input())
 
-print("{:.3f}".format(geometric(n, p)))
+    p = omega / space
+
+    result = geometric(n, p)
+    print("{:.3f}".format(result))
+
+
+if __name__ == "__main__":
+    main()
