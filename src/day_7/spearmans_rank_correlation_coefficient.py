@@ -4,35 +4,44 @@ of  Spearman's rank correlation coefficient.
 """
 
 
-def spearman(n, X, Y):
-    rankX = rank(n, X)
-    rankY = rank(n, Y)
+def spearman(n, x, y):
+    def rank(n, x):
+
+        r = [0] * len(x)
+        total = 1
+        temp_1 = sorted(x)
+        temp_2 = dict()
+        temp_2[temp_1[0]] = 1
+
+        for i in range(1, n):
+            if temp_1[i] != temp_1[i - 1]:
+                total += 1
+            temp_2[temp_1[i]] = total
+
+        for i in range(n):
+            r[i] = temp_2[x[i]]
+
+        return r
+
+    rank_x = rank(n, x)
+    rank_y = rank(n, y)
 
     r = 0
     for i in range(n):
-        r += (rankX[i] - rankY[i]) ** 2
+        r += (rank_x[i] - rank_y[i]) ** 2
 
     return 1 - 6 * r / (n * (n ** 2 - 1))
 
 
-def rank(n, X):
-    r = [0] * len(X)
-    temp1 = sorted(X)
-    temp2 = dict()
-    x = 1
-    temp2[temp1[0]] = 1
-    for i in range(1, n):
-        if temp1[i] != temp1[i - 1]:
-            x += 1
-        temp2[temp1[i]] = x
-    for i in range(n):
-        r[i] = temp2[X[i]]
+def main():
 
-    return r
+    n = int(input())
+    x = list(map(float, input().split()))
+    y = list(map(float, input().split()))
+
+    result = spearman(n, x, y)
+    print("{:.3f}".format(result))
 
 
-n = int(input())
-X = list(map(float, input().split()))
-Y = list(map(float, input().split()))
-
-print("{:.3f}".format(spearman(n, X, Y)))
+if __name__ == "__main__":
+    main()
