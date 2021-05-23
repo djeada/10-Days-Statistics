@@ -132,7 +132,7 @@
 <tr>
 <td>Day 8</td>
 <td><a href="https://www.hackerrank.com/challenges/s10-mcq-7/problem" rel="nofollow">Pearson Correlation Coefficient II</a></td>
-<td><a href="https://github.com/djeada/10DaysStatistics/blob/master/src/day_8/pearson_correlation_coefficient_ii.py">Python</a></td>
+<td><a href="https://github.com/djeada/10DaysStatistics/blob/master/src/day_8/pearson_correlation_coefficient_ii.pdf">Math</a></td>
 </tr>
 <tr>
 <td>Day 9</td>
