@@ -1,4 +1,5 @@
-# 10DaysStatistics 10 days statistics challenge from HackerRank.
+# 10 Days Statistics 
+10 days statistics challenge from HackerRank.
 
 <table>
     <thead>
