@@ -15,7 +15,7 @@ Follow the steps:
 - Download this repository: 
  
  ```bash 
-https://github.com/djeada/10DaysStatistics.git
+git clone https://github.com/djeada/10DaysStatistics.git
 ```
  
 - Install <i>virtualenv</i> (if it's not already installed).
