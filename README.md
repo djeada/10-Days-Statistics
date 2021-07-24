@@ -1,6 +1,35 @@
 # 10 Days Statistics 
 10 days statistics challenge from HackerRank.
 
+<h1>Requirements</h1>
+
+* The code is in Python 3.6. 
+* It should work in later versions as well, but there is no guarantee that it will work with earlier Python versions.
+* You may either install Python or use <a href="repl.it">repl.it</a>, a web-based Python interpreter. The code may be executed in an IDE or from the command line using ```python filename.py ```.
+
+<h1>How to run the examples?</h1>
+
+Follow the steps:
+
+- Download this repository: 
+ 
+ ```bash 
+ git clone https://github.com/djeada/kaggle-titanic.git
+ ```
+ 
+- Install <i>virtualenv</i> (if it's not already installed).
+- Open the terminal from the project directory and run the following commands (all needed dependencies will be installed):
+ 
+```bash
+virtualenv env
+source env/bin/activate
+pip3 install -r requirements.txt
+```
+
+- You can now run the examples.
+
+<h1>List of Problems</h1>
+
 <table>
     <thead>
         <tr>
