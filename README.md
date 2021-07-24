@@ -15,8 +15,8 @@ Follow the steps:
 - Download this repository: 
  
  ```bash 
- git clone https://github.com/djeada/kaggle-titanic.git
- ```
+https://github.com/djeada/10DaysStatistics.git
+```
  
 - Install <i>virtualenv</i> (if it's not already installed).
 - Open the terminal from the project directory and run the following commands (all needed dependencies will be installed):
