@@ -5,7 +5,8 @@
 
 * The code is in Python 3.6. 
 * It should work in later versions as well, but there is no guarantee that it will work with earlier Python versions.
-* You may either install Python or use <a href="repl.it">repl.it</a>, a web-based Python interpreter. The code may be executed in an IDE or from the command line using ```python filename.py ```.
+* You may either install Python or use <a href="repl.it">repl.it</a>, a web-based Python interpreter. 
+* If you decide to use Python locally, then the code may be executed in an IDE or from the command line using ```python filename.py ```.
 
 <h1>How to run the examples?</h1>
 
