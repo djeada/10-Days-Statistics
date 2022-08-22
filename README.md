@@ -1,14 +1,16 @@
 # 10 Days Statistics 
 10 days statistics challenge from HackerRank.
 
-<h1>Requirements</h1>
+![Capture](https://user-images.githubusercontent.com/37275728/186026660-5b87c93e-7d6f-4540-a196-b5ea003a3df8.PNG)
+
+## Requirements
 
 * The code is in Python 3.6. 
 * It should work in later versions as well, but there is no guarantee that it will work with earlier Python versions.
 * You may either install Python or use <a href="repl.it">repl.it</a>, a web-based Python interpreter. 
 * If you decide to use Python locally, then the code may be executed in an IDE or from the command line using ```python filename.py ```.
 
-<h1>How to run the examples?</h1>
+## How to run the examples?
 
 Follow the steps:
 
@@ -29,7 +31,7 @@ pip3 install -r requirements.txt
 
 - You can now run the examples.
 
-<h1>List of Problems</h1>
+## List of Problems
 
 <table>
     <thead>
