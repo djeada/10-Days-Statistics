@@ -1,6 +1,6 @@
 """
-The probability that a machine produces a defective product is 1/3.
-What is the probability that the 1st defect is found during the 5th inspection?
+A random variable, X, follows Poisson distribution with mean of λ.
+Find the probability of X = k for the given values of λ and k.
 """
 
 e = 2.718281828459
