@@ -7,49 +7,44 @@ range, rounded to a scale of 1 decimal place (i.e.,12.3 format).
 """
 
 
-def calculate_median(data):
+from itertools import chain, repeat
+
+
+def median(data):
     n = len(data)
+    mid = n // 2
 
-    if n % 2 == 0:
-        return (data[n // 2] + data[n // 2 - 1]) / 2
+    if n % 2:
+        return data[mid]
 
-    return data[n // 2]
-
-
-def calculate_lower_quartile(S, n):
-    return calculate_median(S[: n // 2])
+    return (data[mid - 1] + data[mid]) / 2
 
 
-def calculate_upper_quartile(S, n):
+def interquartile_range(data):
+    data = sorted(data)
+    n = len(data)
+    mid = n // 2
 
-    if n % 2 == 1:
-        return calculate_median(S[n // 2 + 1 :])
+    lower_half = data[:mid]
+    upper_half = data[mid + 1:] if n % 2 else data[mid:]
 
-    return calculate_median(S[n // 2 :])
+    q1 = median(lower_half)
+    q3 = median(upper_half)
 
-
-def calculate_inter_quartile(S, n):
-    lower_quartile = calculate_lower_quartile(S, n)
-    upper_quartile = calculate_upper_quartile(S, n)
-
-    return float(upper_quartile - lower_quartile)
+    return q3 - q1
 
 
 def main():
+    _ = int(input())
+    values = list(map(int, input().split()))
+    frequencies = list(map(int, input().split()))
 
-    n = int(input())
-    X = list(map(int, input().rstrip().split()))
-    F = list(map(int, input().rstrip().split()))
-    S = []
+    data = chain.from_iterable(
+        repeat(value, frequency)
+        for value, frequency in zip(values, frequencies)
+    )
 
-    for i in range(n):
-        for j in range(F[i]):
-            S.append(X[i])
-
-    S.sort()
-    n = len(S)
-
-    print(calculate_inter_quartile(S, n))
+    print(f"{interquartile_range(data):.1f}")
 
 
 if __name__ == "__main__":
