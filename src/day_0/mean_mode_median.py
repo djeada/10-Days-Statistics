@@ -8,53 +8,37 @@ answers should be in decimal form, rounded to a scale of 1 decimal place
 (i.e., 12.3, 7.0 format).
 """
 
-
-def calculate_median(data, n):
-    if n % 2 == 0:
-        return (data[int(n / 2)] + data[int(n / 2) - 1]) / 2
-
-    return data[int(n / 2)]
+from collections import Counter
 
 
-def calculate_mean(data, n):
-    total = 0
-
-    for x in data:
-        total += x
-
-    return total / n
+def mean(data):
+    return sum(data) / len(data)
 
 
-def calculate_mode(data, n):
+def median(data):
+    n = len(data)
+    mid = n // 2
 
-    histo = dict()
+    if n % 2:
+        return data[mid]
 
-    for x in data:
-        if x in histo:
-            histo[x] += 1
-        else:
-            histo[x] = 1
+    return (data[mid - 1] + data[mid]) / 2
 
-    mode = max(histo, key=histo.get)
-    if histo[mode] == 1:
-        mode = min(data)
 
-    return mode
+def mode(data):
+    counts = Counter(data)
+    max_count = max(counts.values())
+
+    return min(value for value, count in counts.items() if count == max_count)
 
 
 def main():
+    _ = int(input())
+    data = sorted(map(int, input().split()))
 
-    n = int(input())
-    data = list(map(int, input().rstrip().split()))
-    data.sort()
-
-    median = calculate_median(data, n)
-    mean = calculate_mean(data, n)
-    mode = calculate_mode(data, n)
-
-    print(mean)
-    print(median)
-    print(mode)
+    print(f"{mean(data):.1f}")
+    print(f"{median(data):.1f}")
+    print(mode(data))
 
 
 if __name__ == "__main__":
