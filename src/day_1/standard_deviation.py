@@ -5,37 +5,25 @@ Your answer should be in decimal form, rounded to a scale of 1 decimal place
 standard deviation.
 """
 
-import math
+from math import sqrt
 
 
-def calculate_mean(data):
-    n = len(data)
-    total = 0
-
-    for x in data:
-        total += x
-
-    return total / n
+def mean(data):
+    return sum(data) / len(data)
 
 
-def calculate_stdev(data):
-    n = len(data)
-    total = 0
-    mean = calculate_mean(data)
+def standard_deviation(data):
+    avg = mean(data)
+    variance = sum((x - avg) ** 2 for x in data) / len(data)
 
-    for x in data:
-        total += (x - mean) ** 2
-
-    return math.sqrt(total / n)
+    return sqrt(variance)
 
 
 def main():
+    _ = int(input())
+    data = list(map(int, input().split()))
 
-    n = int(input())
-    data = list(map(int, input().rstrip().split()))
-
-    stdev = calculate_stdev(data)
-    print(stdev)
+    print(f"{standard_deviation(data):.1f}")
 
 
 if __name__ == "__main__":
