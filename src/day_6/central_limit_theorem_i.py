@@ -6,23 +6,25 @@ standard deviation of 15 pounds. Based on this information, what is the
 probability that all 49 boxes can be safely loaded into the freight elevator
 and transported?
 """
+from math import erf, sqrt
 
-import math
 
-
-def cumulative_probability(x, miu, sigma):
-    return 1 / 2 * (1 + math.erf((x - miu) / (sigma * math.sqrt(2))))
+def normal_cdf(x, mean, stddev):
+    return 0.5 * (1 + erf((x - mean) / (stddev * sqrt(2))))
 
 
 def main():
-
-    maximum_load = float(input())
+    max_load = float(input())
     n = int(input())
-    miu = float(input())
-    sigma = float(input())
+    mean = float(input())
+    stddev = float(input())
 
-    result = cumulative_probability(maximum_load, n * miu, math.sqrt(n) * sigma)
-    print("{:.4f}".format(result))
+    sample_mean = n * mean
+    sample_stddev = sqrt(n) * stddev
+
+    result = normal_cdf(max_load, sample_mean, sample_stddev)
+
+    print(f"{result:.4f}")
 
 
 if __name__ == "__main__":
