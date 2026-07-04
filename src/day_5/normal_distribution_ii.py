@@ -10,33 +10,27 @@ Failed the test (i.e., have a grade < 60)?
 Find and print the answer to each question on a new line,
 rounded to a scale of 2 decimal places.
 """
-import math
 
-pi = 3.14
-
-
-def normal_distribution(x, miu, sigma):
-    return math.exp(-(x - miu) ** 2 / (2 * sigma ** 2)) / (sigma * math.sqrt(2 * pi))
+from math import erf, sqrt
 
 
-def cumulative_probability(x, miu, sigma):
-    return 1 / 2 * (1 + math.erf((x - miu) / (sigma * math.sqrt(2))))
+def normal_cdf(x, mean, stddev):
+    z = (x - mean) / (stddev * sqrt(2))
+    return 0.5 * (1 + erf(z))
 
 
 def main():
-
-    miu, sigma = map(int, input().split())
+    mean, stddev = map(float, input().split())
     x1 = float(input())
     x2 = float(input())
 
-    result = 100 - cumulative_probability(x1, miu, sigma) * 100
-    print("{:.2f}".format(result))
+    above_x1 = (1 - normal_cdf(x1, mean, stddev)) * 100
+    above_x2 = (1 - normal_cdf(x2, mean, stddev)) * 100
+    below_x2 = normal_cdf(x2, mean, stddev) * 100
 
-    result = 100 - cumulative_probability(x2, miu, sigma) * 100
-    print("{:.2f}".format(result))
-
-    result = cumulative_probability(x2, miu, sigma) * 100
-    print("{:.2f}".format(result))
+    print(f"{above_x1:.2f}")
+    print(f"{above_x2:.2f}")
+    print(f"{below_x2:.2f}")
 
 
 if __name__ == "__main__":
