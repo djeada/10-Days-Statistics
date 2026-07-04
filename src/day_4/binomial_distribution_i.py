@@ -8,34 +8,20 @@ Then print your result, rounded to a scale of  decimal places
 (i.e., 1.234 format).
 """
 
-
-def factorial(n):
-    if n < 2:
-        return 1
-
-    return n * factorial(n - 1)
+from math import comb
 
 
 def binomial(n, x, p):
-    return (
-        factorial(n) // factorial(n - x) // factorial(x) * (p ** x) * (1 - p) ** (n - x)
-    )
+    return comb(n, x) * p**x * (1 - p) ** (n - x)
 
 
 def main():
-
     boys, girls = map(float, input().split())
+    p_boy = boys / (boys + girls)
 
-    probability = boys / (boys + girls)
+    result = sum(binomial(6, x, p_boy) for x in range(3, 7))
 
-    result = (
-        binomial(6, 3, probability)
-        + binomial(6, 4, probability)
-        + binomial(6, 5, probability)
-        + binomial(6, 6, probability)
-    )
-
-    print("{:.3f}".format(result))
+    print(f"{result:.3f}")
 
 
 if __name__ == "__main__":
