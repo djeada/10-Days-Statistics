@@ -6,32 +6,27 @@ Less than 19.5 hours?
 Between 20 and 22 hours?
 """
 
-import math
-
-pi = 3.14
+from math import erf, sqrt
 
 
-def normal_distribution(x, miu, sigma):
-    return math.exp(-(x - miu) ** 2 / (2 * sigma ** 2)) / (sigma * math.sqrt(2 * pi))
-
-
-def cumulative_probability(x, miu, sigma):
-    return 1 / 2 * (1 + math.erf((x - miu) / (sigma * math.sqrt(2))))
+def normal_cdf(x, mean, stddev):
+    return 0.5 * (1 + erf((x - mean) / (stddev * sqrt(2))))
 
 
 def main():
-
-    miu, sigma = map(int, input().split())
+    mean, stddev = map(float, input().split())
     x = float(input())
-    lower, upper = map(int, input().split())
+    lower, upper = map(float, input().split())
 
-    result = cumulative_probability(x, miu, sigma)
-    print("{:.3f}".format(result))
-
-    result = cumulative_probability(upper, miu, sigma) - cumulative_probability(
-        lower, miu, sigma
+    less_than_x = normal_cdf(x, mean, stddev)
+    between_lower_and_upper = normal_cdf(upper, mean, stddev) - normal_cdf(
+        lower,
+        mean,
+        stddev,
     )
-    print("{:.3f}".format(result))
+
+    print(f"{less_than_x:.3f}")
+    print(f"{between_lower_and_upper:.3f}")
 
 
 if __name__ == "__main__":
