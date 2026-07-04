@@ -7,25 +7,25 @@ A few hours before the game starts, 100 eager students line up to purchase
 last-minute tickets. If there are only 250 tickets left, what is the probability
 that all 100 students will be able to purchase tickets?
 """
+from math import erf, sqrt
 
-import math
 
-
-def cumulative_probability(x, miu, sigma):
-    return 1 / 2 * (1 + math.erf((x - miu) / (sigma * math.sqrt(2))))
+def normal_cdf(x, mean, stddev):
+    return 0.5 * (1 + erf((x - mean) / (stddev * sqrt(2))))
 
 
 def main():
-
     tickets = float(input())
     students = int(input())
-    miu = float(input())
-    sigma = float(input())
+    mean = float(input())
+    stddev = float(input())
 
-    result = cumulative_probability(
-        tickets, students * miu, math.sqrt(students) * sigma
-    )
-    print("{:.4f}".format(result))
+    total_mean = students * mean
+    total_stddev = sqrt(students) * stddev
+
+    result = normal_cdf(tickets, total_mean, total_stddev)
+
+    print(f"{result:.4f}")
 
 
 if __name__ == "__main__":
