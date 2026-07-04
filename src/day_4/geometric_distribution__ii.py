@@ -3,28 +3,18 @@ The probability that a machine produces a defective product is 1/3.
 What is the probability that the 1st defect is found during the first 5 inspections?
 """
 
-
-def geometric(n, p):
-    return p * (1 - p) ** (n - 1)
-
-
-def sum_geometric(n, p):
-    total = 0
-    for i in range(1, n):
-        total += geometric(i, p)
-
-    return total
+def geometric_cdf(n, p):
+    return 1 - (1 - p) ** n
 
 
 def main():
-
-    omega, space = map(int, input().split())
+    numerator, denominator = map(int, input().split())
     n = int(input())
 
-    p = omega / space
+    p = numerator / denominator
+    result = geometric_cdf(n, p)
 
-    result = sum_geometric(6, p)
-    print("{:.3f}".format(result))
+    print(f"{result:.3f}")
 
 
 if __name__ == "__main__":
