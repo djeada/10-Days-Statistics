@@ -3,34 +3,30 @@ Given two n-element data sets, X and Y, calculate the value
 of the Pearson correlation coefficient.
 """
 
+from math import sqrt
 
-def pearson(n, x, y):
-    sx = 0
-    sy = 0
-    p = 0
 
-    mx = sum(x) / n
-    my = sum(y) / n
+def pearson_correlation(x, y):
+    mean_x = sum(x) / len(x)
+    mean_y = sum(y) / len(y)
 
-    for i in range(n):
-        sx += (x[i] - mx) ** 2
-        sy += (y[i] - my) ** 2
-        p += (x[i] - mx) * (y[i] - my)
+    numerator = sum(
+        (xi - mean_x) * (yi - mean_y)
+        for xi, yi in zip(x, y)
+    )
 
-    sx = (sx / n) ** 0.5
-    sy = (sy / n) ** 0.5
+    denominator_x = sum((xi - mean_x) ** 2 for xi in x)
+    denominator_y = sum((yi - mean_y) ** 2 for yi in y)
 
-    return p / (n * sx * sy)
+    return numerator / sqrt(denominator_x * denominator_y)
 
 
 def main():
-
-    n = int(input())
+    _ = int(input())
     x = list(map(float, input().split()))
     y = list(map(float, input().split()))
 
-    result = pearson(n, x, y)
-    print("{:.3f}".format(result))
+    print(f"{pearson_correlation(x, y):.3f}")
 
 
 if __name__ == "__main__":
