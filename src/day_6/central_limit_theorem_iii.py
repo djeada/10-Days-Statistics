@@ -5,19 +5,25 @@ distribution of the sample mean; in other words, compute A and B such that
 P(A < x < B). Use the value of z = 1.96. Note that z is the z-score.
 """
 
-import math
+from math import sqrt
+
+
+def confidence_interval(mean, stddev, sample_size, z_score):
+    margin_of_error = z_score * stddev / sqrt(sample_size)
+    return mean - margin_of_error, mean + margin_of_error
 
 
 def main():
-    n = int(input())
-    miu = float(input())
-    sigma = float(input())
-    percent = float(input())
-    z = float(input())
+    sample_size = int(input())
+    mean = float(input())
+    stddev = float(input())
+    _ = float(input())
+    z_score = float(input())
 
-    e = z * sigma / math.sqrt(n)
-    print("{:2f}".format(miu - e))
-    print("{:2f}".format(miu + e))
+    lower, upper = confidence_interval(mean, stddev, sample_size, z_score)
+
+    print(f"{lower:.2f}")
+    print(f"{upper:.2f}")
 
 
 if __name__ == "__main__":
