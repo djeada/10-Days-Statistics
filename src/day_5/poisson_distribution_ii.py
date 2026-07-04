@@ -6,19 +6,18 @@ The number of repairs, Y, that machine B needs is a Poisson random variable with
 Assume that the repairs take a negligible amount of time and the machines are maintained nightly to ensure that they operate like new at the start of each day. Find and print the expected daily cost for each machine.
 """
 
-
-def expected_cost(l):
-    return l + l ** 2
+def expected_value_squared(lam):
+    return lam + lam**2
 
 
 def main():
-    l1, l2 = map(float, input().split())
+    lambda_a, lambda_b = map(float, input().split())
 
-    result = 160 + 40 * expected_cost(l1)
-    print("{:.3f}".format(result))
+    cost_a = 160 + 40 * expected_value_squared(lambda_a)
+    cost_b = 128 + 40 * expected_value_squared(lambda_b)
 
-    result = 120 + 40 * expected_cost(l2)
-    print("{:.3f}".format(result))
+    print(f"{cost_a:.3f}")
+    print(f"{cost_b:.3f}")
 
 
 if __name__ == "__main__":
