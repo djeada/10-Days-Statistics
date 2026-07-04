@@ -6,37 +6,72 @@ Andrea studies this equation for n different feature sets (f1, f2, ..., fm) and 
 If she has q new feature sets, can you help Andrea find the value of Y for each of the sets?
 """
 
-import numpy as np
+def solve_linear_system(matrix, values):
+    n = len(values)
+    augmented = [row[:] + [value] for row, value in zip(matrix, values)]
+
+    for col in range(n):
+        pivot = max(range(col, n), key=lambda row: abs(augmented[row][col]))
+        augmented[col], augmented[pivot] = augmented[pivot], augmented[col]
+
+        pivot_value = augmented[col][col]
+        augmented[col] = [value / pivot_value for value in augmented[col]]
+
+        for row in range(n):
+            if row == col:
+                continue
+
+            factor = augmented[row][col]
+            augmented[row] = [
+                current - factor * pivot_current
+                for current, pivot_current in zip(augmented[row], augmented[col])
+            ]
+
+    return [row[-1] for row in augmented]
 
 
-def least_squares(x, y):
-    a = np.append(x, np.ones((len(x), 1)), axis=-1)
-    y = y[:, np.newaxis]
+def least_squares(samples, feature_count):
+    x = [[1.0] + sample[:feature_count] for sample in samples]
+    y = [sample[-1] for sample in samples]
 
-    result = np.linalg.inv(np.dot(a.T, a))
-    result = np.dot(result, a.T)
-    result = np.dot(result, y)
+    columns = list(zip(*x))
 
-    return result[-1][0], result[:-1]
+    left = [
+        [
+            sum(a * b for a, b in zip(col_a, col_b))
+            for col_b in columns
+        ]
+        for col_a in columns
+    ]
+
+    right = [
+        sum(value * target for value, target in zip(col, y))
+        for col in columns
+    ]
+
+    return solve_linear_system(left, right)
+
+
+def predict(coefficients, features):
+    intercept, *weights = coefficients
+    return intercept + sum(weight * value for weight, value in zip(weights, features))
 
 
 def main():
+    feature_count, sample_count = map(int, input().split())
 
-    m, n = list(map(int, str.split(input(), " ")))
-    data = [list(float(x) for x in input().split()) for i in range(n)]
+    samples = [
+        list(map(float, input().split()))
+        for _ in range(sample_count)
+    ]
 
-    x = np.array([[item[i] for i in range(m)] for item in data])
-    y = np.array([item[-1] for item in data])
+    coefficients = least_squares(samples, feature_count)
 
-    a, b = least_squares(x, y)
+    query_count = int(input())
 
-    q = int(input())
-
-    for i in range(q):
-        data = list(map(float, input().split()))
-        result = [b[j] * data[j] for j in range(m)]
-        result = a + np.sum(result)
-        print("{:.3f}".format(result))
+    for _ in range(query_count):
+        features = list(map(float, input().split()))
+        print(f"{predict(coefficients, features):.3f}")
 
 
 if __name__ == "__main__":
