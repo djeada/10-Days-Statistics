@@ -4,19 +4,18 @@ What is the probability that the 1st defect is found during the 5th inspection?
 """
 
 
-def geometric(n, p):
-    return p * (1 - p) ** (n - 1)
+def geometric_probability(trial, probability):
+    return probability * (1 - probability) ** (trial - 1)
 
 
 def main():
+    numerator, denominator = map(int, input().split())
+    trial = int(input())
 
-    omega, space = map(int, input().split())
-    n = int(input())
+    probability = numerator / denominator
+    result = geometric_probability(trial, probability)
 
-    p = omega / space
-
-    result = geometric(n, p)
-    print("{:.3f}".format(result))
+    print(f"{result:.3f}")
 
 
 if __name__ == "__main__":
