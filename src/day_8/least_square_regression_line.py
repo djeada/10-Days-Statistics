@@ -10,41 +10,28 @@ value of y when x = 80.
 """
 
 
-def mean(arr):
-    return sum(arr) / len(arr)
-
-
-def linear_regression(x, y, n):
+def linear_regression(x, y):
+    n = len(x)
 
     sum_x = sum(x)
     sum_y = sum(y)
+    sum_x_squared = sum(xi**2 for xi in x)
+    sum_xy = sum(xi * yi for xi, yi in zip(x, y))
 
-    sum_xsq = 0
-    for elem in x:
-        sum_xsq += elem ** 2
+    slope = (n * sum_xy - sum_x * sum_y) / (n * sum_x_squared - sum_x**2)
+    intercept = (sum_y / n) - slope * (sum_x / n)
 
-    sum_xy = 0
-    for elem_x, elem_y in zip(x, y):
-        sum_xy += elem_x * elem_y
-
-    b = (n * sum_xy - sum_x * sum_y) / (n * sum_xsq - sum_x ** 2)
-    a = mean(y) - b * mean(x)
-
-    return a, b
+    return intercept, slope
 
 
 def main():
+    data = [tuple(map(int, input().split())) for _ in range(5)]
+    x, y = zip(*data)
 
-    n = 5
-    x, y = [0] * n, [0] * n
+    intercept, slope = linear_regression(x, y)
 
-    for i in range(n):
-        x[i], y[i] = map(int, input().split())
-
-    a, b = linear_regression(x, y, n)
-
-    result = a + b * 80
-    print("{:.3f}".format(result))
+    prediction = intercept + slope * 80
+    print(f"{prediction:.3f}")
 
 
 if __name__ == "__main__":
