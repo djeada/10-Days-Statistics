@@ -3,44 +3,30 @@ Given two n-element data sets, X and Y, calculate the value
 of  Spearman's rank correlation coefficient.
 """
 
+def ranks(values):
+    sorted_values = sorted(values)
+    return {value: rank for rank, value in enumerate(sorted_values, start=1)}
 
-def spearman(n, x, y):
-    def rank(n, x):
 
-        r = [0] * len(x)
-        total = 1
-        temp_1 = sorted(x)
-        temp_2 = dict()
-        temp_2[temp_1[0]] = 1
+def spearman_correlation(x, y):
+    rank_x = ranks(x)
+    rank_y = ranks(y)
+    n = len(x)
 
-        for i in range(1, n):
-            if temp_1[i] != temp_1[i - 1]:
-                total += 1
-            temp_2[temp_1[i]] = total
+    squared_diffs = sum(
+        (rank_x[xi] - rank_y[yi]) ** 2
+        for xi, yi in zip(x, y)
+    )
 
-        for i in range(n):
-            r[i] = temp_2[x[i]]
-
-        return r
-
-    rank_x = rank(n, x)
-    rank_y = rank(n, y)
-
-    r = 0
-    for i in range(n):
-        r += (rank_x[i] - rank_y[i]) ** 2
-
-    return 1 - 6 * r / (n * (n ** 2 - 1))
+    return 1 - (6 * squared_diffs) / (n * (n**2 - 1))
 
 
 def main():
-
-    n = int(input())
+    _ = int(input())
     x = list(map(float, input().split()))
     y = list(map(float, input().split()))
 
-    result = spearman(n, x, y)
-    print("{:.3f}".format(result))
+    print(f"{spearman_correlation(x, y):.3f}")
 
 
 if __name__ == "__main__":
