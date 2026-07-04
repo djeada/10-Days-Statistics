@@ -3,26 +3,18 @@ A random variable, X, follows Poisson distribution with mean of λ.
 Find the probability of X = k for the given values of λ and k.
 """
 
-e = 2.718281828459
+from math import exp, factorial
 
 
-def factorial(n):
-    if n < 2:
-        return 1
-    return n * factorial(n - 1)
-
-
-def poisson(l, k):
-    return l ** k * e ** (-l) / factorial(k)
+def poisson_probability(lam, k):
+    return lam**k * exp(-lam) / factorial(k)
 
 
 def main():
-
-    l = float(input())
+    lam = float(input())
     k = int(input())
 
-    result = poisson(l, k)
-    print("{:.3f}".format(result))
+    print(f"{poisson_probability(lam, k):.3f}")
 
 
 if __name__ == "__main__":
